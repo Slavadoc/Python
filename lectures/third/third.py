@@ -1,6 +1,6 @@
 # def f(x):
 #     return x ** 2
-# g = f 
+# g = f
 # print(f(2))
 # print(g(2))
 
@@ -23,7 +23,7 @@
 # s = lambda w, y : w + y
 # def mult(x, y):
 #     return x * y
-# m = lambda z, s: z * s  
+# m = lambda z, s: z * s
 # def calc(func, a , b):
 #     print(func(a,b))
 
@@ -43,7 +43,7 @@
 
 # path = 'data.txt'
 # data = open(path,'r')
-# list =  data.read() 
+# list =  data.read()
 # print(list)
 # data.close()
 
@@ -57,41 +57,45 @@
 #         newData.append((e , f(e)))
 # # newData = [int(i , lambda i : i ** i) for i in list if int(i) % 2 == 0 ]
 # print(*newData)
+exit()
 
-# def select(f, col):
-#     return [f(x) for x in col]
 
-# def where(f, col):
-#     return [x for x in col if f(x)]
+def select(f, col):
+    return [f(x) for x in col]
 
-# path = 'data.txt'
-# first_data = open(path,'r')
-# data =  first_data.read().split() 
-# print(data)
-# first_data.close()
 
-# res  = select(int, data)
-# res = where(lambda x: not x % 2 , res)
-# res= select(lambda x: (x , x ** 2), res)
-# print(res)
+def where(f, col):
+    return [x for x in col if f(x)]
 
-# li = [x for x in range(1,11)]
-# print(li)
-# li = list(map(lambda x: x+10, li))
-# print(li)
 
-# n = list(map(int,input().split()))
-# print(type(n))
-# res = list(filter(lambda x: not x %2 , n))
-# print(res)
+path = 'data.txt'
+first_data = open(path, 'r')
+data = first_data.read().split()
+print(data)
+first_data.close()
 
-# a = list(map(str,input().split()))
-# b = list(map(int,input().split()))
-# c = list(map(str,input().split()))
+res = select(int, data)
+res = where(lambda x: not x % 2, res)
+res = select(lambda x: (x, x ** 2), res)
+print(res)
 
-# data = list(zip(a,b,c))
-# print(data)
+li = [x for x in range(1, 11)]
+print(li)
+li = list(map(lambda x: x+10, li))
+print(li)
 
-li = ['Vasia','Slava',"Kolia"]
+n = list(map(int, input().split()))
+print(type(n))
+res = list(filter(lambda x: not x % 2, n))
+print(res)
+
+a = list(map(str, input().split()))
+b = list(map(int, input().split()))
+c = list(map(str, input().split()))
+
+data = list(zip(a, b, c))
+print(data)
+
+li = ['Vasia', 'Slava', "Kolia"]
 data = list(enumerate(li))
 print(data)
