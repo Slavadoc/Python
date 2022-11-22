@@ -30,7 +30,8 @@ def choice_todo():
     1 - импорт;\n\
     2 - экспорт;\n\
     3 - поиск контакта;\n\
-    4 - удаление")
+    4 - удаление; \n\
+    5 - добавление данных")
     ch = input("Введите цифру: ")
     if ch == '1':
         sep = choice_sep()
@@ -54,4 +55,9 @@ def choice_todo():
         word = input("Введите данные для удаления: ")
         data = export_data()
         item = search_data(word, data)
-        delete(item[0])
+        if item != None:
+            delete(item[0])
+        else:
+            print("Данные не обнаружены")
+    elif ch == '5':
+        word = input("Введите данные для поиска:  ")
