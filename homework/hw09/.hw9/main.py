@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from bots_commands import *
 
 
-app = ApplicationBuilder().token("5986622913:AAHaM26zJGf7qdweDIog_Vj71Kx3_eidFz0").build()
+app = ApplicationBuilder().token("Токен").build()
 
 app.add_handler(CommandHandler("hi", hi_command))
 app.add_handler(CommandHandler("time", time_command))
